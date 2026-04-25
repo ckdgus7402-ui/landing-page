@@ -1,0 +1,498 @@
+:root {
+    --ruby-red: #FF1744;
+    --ruby-glow: #FF4081;
+    --kiwi-gold: #FFD600;
+    --kiwi-green: #C6FF00;
+    --light-bg: #FCFFF5;
+    --warm-white: #FFFFFF;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(198, 255, 0, 0.3);
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Utilities */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.05);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 251, 242, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(233, 30, 99, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ruby-glow);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--ruby-red);
+}
+
+.lang-switch {
+    background: rgba(255, 23, 68, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--ruby-red) !important;
+    font-weight: 700;
+}
+
+.lang-switch:hover {
+    background: var(--ruby-red);
+    color: white !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--ruby-red), var(--ruby-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(233, 30, 99, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+/* Hero Banner Main */
+.hero.banner-main {
+    padding: 0;
+    display: block;
+}
+
+.banner-container.full-hero {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+}
+
+.banner-text-main {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle-main {
+    font-size: 1.4rem;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn-secondary {
+    padding: 1rem 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+.btn-primary {
+    padding: 1rem 2.5rem;
+    background: var(--ruby-red);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(196, 30, 58, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--ruby-glow);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(196, 30, 58, 0.6);
+}
+
+/* Features Section */
+.features {
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 3rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--ruby-glow);
+}
+
+/* Feature Cards & Icons */
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(198, 255, 0, 0.15);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--ruby-red);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+    background: var(--kiwi-green);
+    color: #1A1A1A;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.icon-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Promo Banner Section */
+.promo-banner {
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+    filter: brightness(1.1) contrast(1.05); /* Brightened the image significantly */
+}
+
+.banner-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(252, 255, 245, 0.4), rgba(252, 255, 245, 0.2)); /* Soft light overlay */
+    z-index: 1;
+}
+
+.banner-container:hover .banner-bg {
+    transform: scale(1.05);
+}
+
+.banner-overlay {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 2rem;
+    max-width: 900px;
+}
+
+.banner-tag {
+    background: var(--kiwi-green);
+    color: #1A1A1A;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(198, 255, 0, 0.3);
+}
+
+.banner-text-main {
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--ruby-red), #FF80AB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.hero-subtitle-main {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+    font-weight: 500;
+}
+
+/* Comprehensive Responsive Design */
+
+/* Tablet Optimization (Up to 1024px) */
+@media (max-width: 1024px) {
+    .banner-overlay {
+        max-width: 80%;
+        padding: 2.5rem;
+    }
+
+    .banner-text-main {
+        font-size: 4.5rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 80px 5%;
+    }
+}
+
+/* Mobile Optimization (Up to 768px) */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: var(--light-bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: 0.5s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu-toggle span {
+        width: 30px;
+        height: 3px;
+        background: var(--ruby-red);
+        border-radius: 3px;
+        transition: 0.3s ease;
+    }
+
+    /* Hamburger Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .banner-text-main {
+        font-size: 3.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle-main {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-overlay {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        max-width: 95%;
+        border-radius: 24px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 60px 5%;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 2rem;
+    }
+}
+
+/* Small Mobile (Up to 480px) */
+@media (max-width: 480px) {
+    .banner-text-main {
+        font-size: 2.5rem;
+    }
+
+    .banner-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}
