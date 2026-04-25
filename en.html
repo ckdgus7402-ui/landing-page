@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Kiwi - Nature's Red Jewel</title>
+    <meta name="description" content="Discover the enchanting ruby-red center and overwhelming sweetness of Ruby Kiwi.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Ruby Kiwi</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#benefits">Product</a>
+            <a href="#story">Story</a>
+            <a href="#contact">Contact</a>
+            <a href="index.html" class="lang-switch">KO</a>
+        </div>
+    </nav>
+
+    <section class="hero banner-main">
+        <div class="banner-container full-hero">
+            <img src="promo_banner.png" alt="Ruby Kiwi Promo" class="banner-bg">
+            <div class="banner-overlay animate-fade-in">
+                <span class="banner-tag">SEASON SPECIAL</span>
+                <h1 class="hero-title banner-text-main">Nature's Red Jewel</h1>
+                <p class="banner-sub hero-subtitle-main">
+                    Experience the perfect Ruby Kiwi. Don't miss out on the ultimate sweetness in limited quantities.
+                </p>
+                <div class="hero-btns">
+                    <button class="btn-primary">Reserve Now</button>
+                    <a href="#benefits" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="features">
+        <div class="feature-card glass-card">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <h3 class="feature-title">Premium Quality</h3>
+            <p>We provide only the finest Ruby Kiwis that have undergone a rigorous selection process. We guarantee perfect shape and peak sweetness.</p>
+        </div>
+        <div class="feature-card glass-card">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </div>
+            <h3 class="feature-title">High Antioxidant</h3>
+            <p>The anthocyanins and Vitamin C contained in the ruby-red flesh are natural nutrients that help prevent aging and boost immunity.</p>
+        </div>
+        <div class="feature-card glass-card">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+            </div>
+            <h3 class="feature-title">Natural Sweetness</h3>
+            <p>Enjoy the overwhelming natural sweetness of over 20 brix, created by nature without any artificial sugar.</p>
+        </div>
+        <div class="feature-card glass-card">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="feature-title">Safe Food</h3>
+            <p>Cultivated with eco-friendly farming methods certified by GAP, so the whole family can enjoy it with peace of mind.</p>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
